@@ -1,0 +1,8 @@
+<header>
+    <h2>{{title}}</h2>
+    <app-boton color="{{showAddTask? 'red' : 'green'}}" 
+    text="{{showAddTask ? 'Close' : 'Add Task'}}"
+    (btnClick)="toggleAddTask()"
+    *ngIf="hasrouter('/ma')"></app-boton>
+</header>
+

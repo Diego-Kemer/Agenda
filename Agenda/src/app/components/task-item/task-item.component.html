@@ -1,0 +1,16 @@
+<div
+[ngClass]="{'activado': activo === true}"
+*ngIf="!editar"
+class="task">
+    <h3>{{task.titulo}} 
+        <span *ngIf="!activo">
+            <i [ngStyle]="{'color': 'green'}" (click)="edit(task)" class="icofont-ui-edit"></i>
+            <i [ngStyle]="{'color': 'red'}" (click)="onDelete(task._id)" class="icofont-ui-delete"></i>
+        </span>
+        
+    </h3>
+    <button (click)="apagarAlarma()" *ngIf="activo" class="bot"><i class="icofont-alarm"></i></button>
+    <p>{{mes}}</p>
+
+</div>
+<app-form-edit (cancela)="cierre()" [editar]="datas" *ngIf="editar"></app-form-edit>

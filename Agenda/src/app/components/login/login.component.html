@@ -1,0 +1,13 @@
+<div [formGroup]="form">
+    <h2>Login </h2>
+    <div class="form">
+        <h3>Name user</h3>
+        <input formControlName="userLog" autofocus type="text">  
+    </div>
+    <div class="form">
+        <h3>Password</h3>
+        <input formControlName="password" autofocus type="password">  
+    </div>
+    <button (click)="login()">Sigin</button>
+    <a routerLink="register">Register</a>
+</div>

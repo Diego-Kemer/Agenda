@@ -1,0 +1,12 @@
+<div class="task">
+    <h3> 
+        <input [(ngModel)]="titulo" type="text">
+        <span>
+            <i [ngStyle]="{'color': 'green'}" (click)="cancelar()" class="icofont-close-circled"></i>
+            <i [ngStyle]="{'color': 'red'}" (click)="confirmar(editar._id)" class="icofont-save"></i>
+        </span>
+    </h3>
+    <p><input [(ngModel)]="hora" type="datetime-local"></p>
+
+</div>
+<app-loading *ngIf="cargando"></app-loading>
