@@ -41,7 +41,6 @@ export class AppComponent implements OnInit{
     this.serUs.log.subscribe((res: any)=>{
       this.cargando = !this.cargando;
       this.serUs.login(res).subscribe((res:any)=>{ 
-        console.log(res)
           if(res.error){
             this.cargando = !this.cargando;
             return alert(res.mensaje)
@@ -55,6 +54,13 @@ export class AppComponent implements OnInit{
     })
     this.tasks.revisa.subscribe(res=>{
       this.cargando = res
+    })
+
+    this.serUs.cerrarSesion.subscribe(res=>{
+      this.cargando = !this.cargando;
+      this.cookie.delete('token')
+      this.cargando = !this.cargando;
+      this.route.navigate(['/'])
     })
   }
 

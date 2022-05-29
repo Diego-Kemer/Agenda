@@ -1,3 +1,6 @@
+.gen{
+    padding: 20px;
+}
 button{
     display: block;
     margin: 10px auto;
@@ -14,7 +17,7 @@ button{
 }
 .form{
     position: relative;
-    padding-bottom: 25px;
+    padding: 25px 0px;
 }
 button:hover{
     filter: brightness(1.6);
@@ -27,7 +30,10 @@ input{
     outline: none;
 }
 h2{
-    margin: 10px 0px;
+    width: 100%;
+    text-align: center;
+    color: #449;
+    text-decoration: underline;
 }
 i{
     display: none;
@@ -47,4 +53,13 @@ form.ng-invalid button{
 }
 form.ng-invalid button:hover{
     filter: brightness(.9);
+}
+a{
+    text-decoration: none;
+    color: #449;
+    filter: brightness(.3);
+    transition: all .5s;
+}
+a:hover{
+    filter: brightness(1);
 }

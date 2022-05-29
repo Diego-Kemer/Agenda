@@ -8,6 +8,7 @@ import { globalesVars } from "../global";
 })
 export class UserService {
   @Output() log: EventEmitter<any> = new EventEmitter()
+  @Output() cerrarSesion: EventEmitter<any> = new EventEmitter()
   public url = globalesVars.url + '/user'
   constructor( private http: HttpClient) { }
 

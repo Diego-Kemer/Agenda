@@ -3,4 +3,38 @@ header{
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+    background: rgba(68, 68, 153, 0.479);
+    padding: 20px;
+    position: relative;
+    z-index: 9;
+}
+h2{ 
+    color: #449;
+}
+img{
+    width: 100px;
+    height: 100px;
+}
+.botones{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding-left: 10px;
+}
+.botones button{
+    background: transparent;
+    color: #000;
+    font-size: 20px;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+.btnC{
+    margin-top: 10px;
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
 }

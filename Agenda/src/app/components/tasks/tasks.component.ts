@@ -3,6 +3,7 @@ import { UiTaskService } from 'src/app/service/ui-task.service';
 import { TaskService } from '../../service/task.service';
 import { Task } from '../../task'
 import * as moment from 'moment';
+import { UserService } from 'src/app/service/user.service';
 
 
 @Component({
@@ -16,7 +17,8 @@ export class TasksComponent implements OnInit {
  
 
   constructor(
-    private taskservice: TaskService
+    private taskservice: TaskService,
+    private taskUi: UiTaskService
   ) { }
 
   ngOnInit(): void {
@@ -33,12 +35,10 @@ export class TasksComponent implements OnInit {
         if(new Date().getSeconds() < 5){
           for (let index = 0; index < reviso.length; index++) {
             const element = reviso[index];
+            let sonido = new Audio('../../assets/radar.mp3');
             if (moment(element.hora).format('dddd D MMMM YYYY, h:m') == moment(new Date()).format('dddd D MMMM YYYY, h:mm') && element.activo != true) {
               element.activo = true;
               console.log(element);
-              // console.log(element.classList);
-              let sonido = new Audio('../../assets/radar.mp3');
-              sonido.play()
             }else{
               element.activo = false;
             }
@@ -49,12 +49,21 @@ export class TasksComponent implements OnInit {
       }, 6000);
     })();
     
+    this.taskUi.apagar.subscribe(res=>{
+      this.parar()
+    })
   }
 
   deleteTask(task: Task){
     this.taskservice.deleteTask(task).subscribe(()=>{
       this.tasks = this.tasks.filter(t => t.id !== task.id)
     })
+  }
+
+  
+  parar(){
+    let audio = document.getElementsByTagName('audio')
+    audio[0].pause()
   }
 
   toggleReminder(task: Task){

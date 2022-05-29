@@ -25,7 +25,9 @@ export class TaskItemComponent implements OnInit {
   public datas: any; 
   public mes: any;
 
-  constructor(private serTask: UiTaskService, private taskRutas: TaskService) { }
+  constructor(private serTask: UiTaskService, 
+              private taskRutas: TaskService,
+              private taskUi: UiTaskService) { }
 
   ngOnInit(): void {
     this.mes = moment(this.task.hora).format('dddd D MMMM YYYY, h:mm')
@@ -57,5 +59,6 @@ export class TaskItemComponent implements OnInit {
   apagarAlarma(){
     this.activo = false
     this.activado = false
+    this.taskUi.apagar.emit(true)
   }
 }

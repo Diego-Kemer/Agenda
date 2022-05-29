@@ -7,7 +7,8 @@ import { Observable, Subject } from 'rxjs'
 export class UiTaskService {
   @Output() load: EventEmitter<any> = new EventEmitter();
   @Output() revisa: EventEmitter<any> = new EventEmitter() ;
-  @Output() guardada: EventEmitter<any> = new EventEmitter() 
+  @Output() guardada: EventEmitter<any> = new EventEmitter();
+  @Output() apagar: EventEmitter<any> = new EventEmitter() 
   private showAddTassk: boolean = false;
   private subjet = new Subject<any>();
 

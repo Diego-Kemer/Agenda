@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UiTaskService } from '../../service/ui-task.service';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router'
+import { UserService } from 'src/app/service/user.service';
 
 @Component({
   selector: 'app-header',
@@ -15,7 +16,8 @@ export class HeaderComponent implements OnInit {
   suscription: Subscription;
   constructor(
     private uiService: UiTaskService,
-    private router: Router
+    private router: Router,
+    private serUs: UserService
   ) {
     this.suscription = this.uiService.ontoggle().subscribe(value => this.showAddTask = value)
    }
@@ -32,5 +34,9 @@ export class HeaderComponent implements OnInit {
 
   hasrouter(route: string){
     return this.router.url === route
+  }
+
+  cerrarSesion(e: any){
+    this.serUs.cerrarSesion.emit(e)
   }
 }

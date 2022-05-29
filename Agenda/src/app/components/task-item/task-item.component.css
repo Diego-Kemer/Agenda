@@ -1,10 +1,18 @@
 .task{
     background-color: #f4f4f4;
-    margin: 5px;
-    padding: 10px 20px;
+    margin: 15px 5px;
+    padding: 15px 20px;
     cursor: pointer;
     position: relative;
+    animation: anime 2s;
 }
+@keyframes anime {
+    0%{transform: translateY(120%); opacity: 0; margin-bottom: 30px;}
+    90%{transform: translateY(0%); margin-bottom: 10px;}
+    100%{margin-bottom: 15px;}
+    
+}
+
 
 .task.reminder{
     border-left: 5px solid rgb(255, 159, 3);
@@ -27,12 +35,13 @@ p{
     margin-top: auto;
     margin-bottom: auto;
     position: absolute;
-    right: 10px;
+    right: 30px;
     top: 20px;
     font-size: 20px;
     border: none;
     outline: none;
     animation: animate 1s infinite;
+    cursor: pointer;
 }
 @keyframes animate {
     10%{transform: rotate(25deg);}

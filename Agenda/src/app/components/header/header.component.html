@@ -1,8 +1,12 @@
 <header>
-    <h2>{{title}}</h2>
-    <app-boton color="{{showAddTask? 'red' : 'green'}}" 
-    text="{{showAddTask ? 'Close' : 'Add Task'}}"
-    (btnClick)="toggleAddTask()"
-    *ngIf="hasrouter('/ma')"></app-boton>
+    <h2>{{title}}</h2> <img src="../../../assets/agenda.png" alt="">
+    <div class="botones" *ngIf="hasrouter('/ma')">
+        <button title="Close" (click)="cerrarSesion($event)"><i class="icofont-close-circled"></i></button> 
+    </div>
+    <app-boton class="btnC" color="{{showAddTask? '#000' : '#449'}}" 
+        text="{{showAddTask ? 'icofont-ui-close' : 'icofont-meeting-add'}}"
+        (btnClick)="toggleAddTask()"
+    ></app-boton>
+    
 </header>
 

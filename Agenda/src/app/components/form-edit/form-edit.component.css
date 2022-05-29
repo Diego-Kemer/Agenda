@@ -17,3 +17,9 @@
 .task h3 i{
     margin: 0px 10px;
 }
+input[type="datetime-local"], input[type="text"]{
+    border: none;
+    outline: none;
+    margin: 5px;
+    padding: 5px;
+}
