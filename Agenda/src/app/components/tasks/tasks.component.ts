@@ -4,6 +4,7 @@ import { TaskService } from '../../service/task.service';
 import { Task } from '../../task'
 import * as moment from 'moment';
 import { UserService } from 'src/app/service/user.service';
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 
 
 @Component({
@@ -75,5 +76,15 @@ export class TasksComponent implements OnInit {
     this.taskservice.addTask(task).subscribe(task =>{
       this.tasks.push(task)
     })
+  }
+
+  drop($event: CdkDragDrop<any>){
+    
+      moveItemInArray(
+        $event.container.data,
+        $event.previousIndex,
+        $event.currentIndex
+      )
+   
   }
 }

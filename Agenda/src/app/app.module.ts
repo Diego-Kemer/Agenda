@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { Routes, RouterModule } from '@angular/router';
+import { DragDropModule } from '@angular/cdk/drag-drop'
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -47,6 +48,7 @@ const route: Routes = [
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    DragDropModule,
     RouterModule.forRoot(route, {enableTracing: true})
   ],
   providers: [

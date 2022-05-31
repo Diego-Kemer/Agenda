@@ -1,8 +1,8 @@
 <app-add-task
     (onAddTask)="addTask($event)"
 ></app-add-task>
-<div class="taks">
-    <app-task-item class="task" [task]="task"
+<div class="taks" cdkDropList [cdkDropListData]="tasks" (cdkDropListDropped)="drop($event)">
+    <app-task-item cdkDrag class="task" [task]="task"
     [activo]="task.activo"
     *ngFor="let task of tasks"
     (onDeleteTask) = "deleteTask(task)"

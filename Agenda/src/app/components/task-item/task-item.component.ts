@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output,  EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output,  EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 import {Task} from '../../task';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { UiTaskService } from 'src/app/service/ui-task.service';
@@ -9,7 +9,8 @@ moment.locale('es')
 @Component({
   selector: 'app-task-item',
   templateUrl: './task-item.component.html',
-  styleUrls: ['./task-item.component.css']
+  styleUrls: ['./task-item.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TaskItemComponent implements OnInit {
   public editar: boolean = false;
